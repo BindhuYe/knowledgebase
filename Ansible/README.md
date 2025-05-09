@@ -1,1 +1,1 @@
-refer wiki pages for other docs 
+Hands on with sample application for configuration using Ansible
