@@ -4,14 +4,14 @@
 
 ![image](https://github.com/user-attachments/assets/5b2813a5-f493-4665-8964-77359b5be93a)
 
-## Technologies Used
+# Technologies Used
 
 - React 18
 - TypeScript
 - Tailwind CSS
 - Lucide React for icons
 
-## Project Structure
+# Project Structure
 
 ```
 src/

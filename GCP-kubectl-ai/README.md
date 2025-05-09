@@ -1,6 +1,6 @@
 # kubectl-ai
 
-kubectl-ai is an AI powered kubernetes agent that runs in your terminal.
+kubectl-ai is an AI powered kubernetes agent that runs in your terminal. Operates on text prompts
 
 ![kubectl-ai demo GIF using: kubectl-ai "how's nginx app doing in my cluster"](./.github/kubectl-ai.gif)
 
