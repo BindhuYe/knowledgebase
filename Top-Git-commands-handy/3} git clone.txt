@@ -1,0 +1,17 @@
+git clone
+In that case, you use the git clone command followed by the repository’s URL:
+
+git clone <https://github.com/user/project.git>
+This command does two things:
+
+It downloads the entire project, including all files, folders, branches, and commit history—so you get a complete local copy.
+
+It sets up a connection to the remote repository, so you can easily push your changes or pull updates from others.
+
+Once cloned, you’re ready to start working on the project locally.
+
+Now let’s imagine a different scenario: your local Git repository isn’t connected to any remote.
+
+In that case, Git has no idea where to push your changes.
+
+That’s where the git remote command comes in.

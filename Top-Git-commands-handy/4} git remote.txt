@@ -1,0 +1,16 @@
+git remote
+Using git remote, you can add, view, or remove remote connections. Remote repository can be hosted anywhere like GitHub, GitLab, Bitbucket, or even your own server.
+
+To check if your project already has any remotes configured, run:
+
+git remote -v
+This will list all the remote URLs your project can push to or pull from.
+
+If you need to add a new remote, use:
+
+git remote add origin <https://github.com/user/project.git>
+Here, origin is just an alias for your remote. It’s not special, but it’s a common convention for the primary remote.
+
+Once you’ve added a remote, Git knows where to send your code when you push it.
+
+Alright, now that we’ve covered how to set up Git locally and connect it to a remote repository, let’s move on to how you actually start working with your code and tracking changes.

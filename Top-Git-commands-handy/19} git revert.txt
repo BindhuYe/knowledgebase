@@ -1,0 +1,14 @@
+git revert
+If you’ve already pushed a commit to a shared repository and need to undo something, git revert is the safer option.
+
+Unlike git reset, which rewrites history, git revert preserves the history by creating a new commit that reverses the effects of a previous one.
+
+Here’s how you use it:
+
+git revert <commit-hash>
+This doesn’t delete the original commit—it simply adds a new one that undoes the changes from that specific commit.
+
+What if you only want to copy a specific commit from one branch to another without merging everything?
+
+That’s where git cherry-pick command comes in.
+

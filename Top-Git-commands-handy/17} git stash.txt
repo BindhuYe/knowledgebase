@@ -1,0 +1,21 @@
+git stash
+Sometimes you’re in the middle of working on something and suddenly, you need to switch branches or handle a different task.
+
+But your changes aren’t ready to commit yet.
+
+You can use git stash command to temporarily save all your changes both staged and unstaged.
+
+git stash
+It’s like putting your work in a drawer so you can come back to it later.
+
+When you're ready to pick up where you left off, just run:
+
+git stash apply
+This brings back your stashed changes while keeping the stash in case you need it again.
+
+But, if you want to apply the stash and remove it at the same time, use:
+
+git stash pop
+Now, let’s say you've made a mistake and want to undo a commit or reset your branch.
+
+That’s where git reset comes into play.

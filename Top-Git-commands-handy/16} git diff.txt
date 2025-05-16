@@ -1,0 +1,11 @@
+git diff
+git diff gives you a line-by-line comparison between your working directory and the last commit.
+
+git diff
+
+It highlights what’s been added, removed, or modified so you know exactly what you’re about to commit.
+
+You can also use git diff to compare changes between branches or specific commits:
+
+git diff branch1..branch2
+This shows what’s different between two branches—great for code reviews or deciding whether a branch is ready to merge.

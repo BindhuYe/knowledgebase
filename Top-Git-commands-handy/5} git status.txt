@@ -1,0 +1,21 @@
+git status
+If there’s one Git command you’ll find yourself using constantly, it’s this one:
+
+git status
+Think of it as your project’s dashboard—a quick snapshot of everything happening in your working directory.
+
+Whenever you’re unsure about what’s changed, what’s staged, or what’s untracked, git status gives you the full picture.
+
+It shows you:
+
+Which files have changed and are staged for commit
+
+Which files have changed but are not staged
+
+Which files are untracked
+
+Before committing anything, it’s a good habit to run git status.
+
+It helps you decide what to stage, what to skip, and what needs attention.
+
+Once you’ve reviewed the changes, your next step is usually to stage the right files using git add.

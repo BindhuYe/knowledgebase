@@ -1,0 +1,31 @@
+git checkout
+git checkout new-feature
+This switches your working directory to the new-feature branch. It’s like opening up a different version of your project focused on a specific task.
+
+If you want to create a new branch and switch to it in one step, you can use:
+
+git checkout -b new-feature
+But git checkout isn’t just for switching branches. It’s a versatile command you can use in other ways too:
+
+Explore a past commit by checking out its hash:
+
+git checkout 4f27a6e
+
+Switch back to your previous branch:
+
+git checkout -
+
+Discard changes and restore a file to its last committed state:
+
+git checkout -- style.css
+
+Checkout a specific file from another branch:
+
+git checkout feature-branch src/app.js
+
+Because git checkout tries to do a lot of different things, Git later introduced a cleaner alternative:
+
+git switch
+This command focuses purely on switching branches.
+
+Once you’re done working on a branch and want to bring your changes back into the main project, you use: git merge.

@@ -1,0 +1,49 @@
+	
+Forwarded this email? Subscribe here for more
+20 Git Commands EVERY Developer Should Know
+Ashish Pratap Singh
+May 13
+
+ 
+
+
+
+
+READ IN APP
+ 
+If you want to become a great developer, you need to master Git.
+
+But, Git can feel confusing and overwhelming. With so many commands and options, it’s hard to know which ones actually matter.
+
+In this article, I’ll walk you through the Top 20 Git Commands every developer should know.
+
+These are the exact commands I’ve used again and again over the past 11 years as a programmer and they cover almost 99% of real-world Git use cases.
+
+
+If you get comfortable with just these, you will be able to handle almost anything git related while working on projects.
+
+Lets get started.
+
+Share
+
+1. git init
+Let’s start at the very beginning.
+
+git init
+
+This command turns a regular folder into a Git repository.
+
+Behind the scenes, it creates a hidden .git folder.
+
+This folder holds everything Git needs—your commit history, branches, logs, and all the metadata that powers version control.
+
+You’ll typically use git init when starting a brand-new project from scratch.
+
+Once you run git init, Git starts watching your files for changes.
+
+From here on, you can commit changes, create branches, roll back mistakes, and more.
+
+But before you start making commits, there’s one important thing you need to do: tell Git who you are.
+
+That’s where git config comes in.
+

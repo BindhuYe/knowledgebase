@@ -1,0 +1,20 @@
+git push
+To share your commits with others, you use:
+
+git push
+The git push command sends your commits from your local repository to a remote one, like GitHub or GitLab.
+
+It’s how you sync your changes with the central project.
+
+Here’s a basic example:
+
+git push origin main
+This command pushes your changes to the main branch of your remote repository. Now anyone else working on the project can see your updates.
+
+Quick note: In most real-world projects, you don’t push directly to the main branch. Instead, you push to a separate feature branch, and then create a pull request or code review before merging into main.
+
+Sometimes, when you're working on a project with others, someone else may have already pushed their changes before you.
+
+That’s why, before you push your work, it’s a good idea to pull the latest changes so your local copy is up to date and you don’t accidentally overwrite someone else’s work.
+
+To do that, we use git pull command.

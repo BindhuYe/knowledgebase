@@ -1,0 +1,15 @@
+git pull
+This command does two things in one step:
+
+It fetches the most recent commits from the remote repository.
+
+Then, it merges those commits into your current local branch.
+
+You can also specify the branch that you want to pull from. It will merge them into whatever branch you’re currently on.
+
+git pull origin main
+But what if you don’t want to merge anything just yet?
+
+Maybe you just want to see what’s changed on the remote without affecting your local work.
+
+That’s what git fetch is for

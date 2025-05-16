@@ -1,0 +1,30 @@
+it commit
+Think of git commit as hitting “Save” in the world of version control.
+
+It takes a snapshot of your codebase at that point in time along with a message describing what changed and why.
+
+You just run:
+
+git commit -m "Add login feature"
+That message isn’t just a label, it’s a log of what you did.
+
+Later, when you’re looking through your project’s history (or fixing bugs), clear commit messages will save you and your teammates a lot of time.
+
+If you’re working on files that Git already knows about (i.e., they’ve been committed before), you can skip the git add step using:
+
+git commit -a -m "Update login error handling"
+The -a flag tells Git to automatically stage all modified tracked files before committing.
+
+But note—this only works for files Git is already tracking.
+
+If you’ve created a new file or only want to include specific files in the commit, you still need to run git add first.
+
+Sometimes, you commit too early or want to change the commit message.
+
+In that case, you can use:
+
+git commit --amend
+This lets you either edit the commit message or include additional changes (as long as they’ve been staged with git add).
+
+git add and git commit are local operations. Your changes are saved on your machine only. No one else can see them yet.
+

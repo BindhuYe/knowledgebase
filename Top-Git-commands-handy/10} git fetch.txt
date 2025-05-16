@@ -1,0 +1,14 @@
+git fetch
+git fetch origin
+This command contacts the remote and downloads all the latest changes—new commits, branches, etc.—but it doesn’t touch your working directory.
+
+Your current branch remains exactly the same.
+
+If you're on the main branch and want to see what new commits are on the remote origin/main, run:
+
+git log HEAD..origin/main
+
+git fetch gives you full control—you fetch first, review, and only merge when you're ready.
+
+Speaking of branches—let’s look at how to create and work with them next.
+

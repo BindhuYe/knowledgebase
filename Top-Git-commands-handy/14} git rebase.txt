@@ -1,0 +1,23 @@
+git rebase
+If you like keeping your commit history neat and linear, git rebase is the command for you.
+
+Unlike git merge, which combines branches and often creates an extra merge commit, git rebase replays your commits on top of another branch as if you wrote them after the latest changes.
+
+* 3f9e1b2 Add login form validation
+* 1a2d3f4 Create login page UI
+* a12cd3e Update homepage banner
+* 91b2ea3 Initial commit
+This makes your commit history look like a straight line instead of a mess of merges.
+
+Let’s say you’re working on a feature branch, and main has moved forward.
+
+You can update your feature branch with the latest changes from main using:
+
+git rebase main
+This takes all the commits from your current branch and places them on top of the latest commit on main, one by one.
+
+This results into a cleaner, more linear project history that’s easier to read and reason about.
+
+Note: Remember to not rebase branches that others are working on. Because rebase rewrites commit history, it can create confusion or conflicts for your teammates.
+
+When used properly, git rebase is a powerful way to keep your project history clean, clear, and easy to follow.

@@ -1,0 +1,26 @@
+git reset
+git reset is one of the most powerful commands for rolling back changes.
+
+It moves the current branch’s HEAD pointer to a previous commit—essentially rewinding your project to an earlier state.
+
+Depending on how much you want to undo, you can use git reset in three different ways:
+
+Soft Reset
+git reset --soft HEAD~1
+Moves the HEAD back by one commit, but keeps all your changes staged.
+
+Use this when you want to adjust a previous commit or fix a message.
+
+Mixed Reset
+git reset HEAD~1
+Moves the HEAD back and unstages the changes, but keeps them in your working directory.
+
+Perfect when you want to start over on staging but don’t want to lose your code.
+
+Hard Reset
+git reset --hard HEAD~1
+This one completely wipes out changes in both the staging area and working directory.
+
+Use it with caution as it permanently deletes uncommitted work.
+
+If you’ve already pushed a commit to a shared repository and need to undo something, git revert is your safer bet.

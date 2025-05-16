@@ -1,0 +1,31 @@
+git merge
+git merge combines the changes from one branch into another.
+
+Here’s an example:
+
+git merge new-feature
+This tells Git to take the changes from the new-feature branch and combine them into the branch you are currently on.
+
+If the changes don’t overlap, Git will merge everything automatically.
+
+But if both branches have modified the same parts of a file, Git won’t know which version to keep.
+
+That’s called a merge conflict, and Git will pause and ask you to manually resolve it.
+
+Git marks the conflicting files. If you open one (e.g., src/App.js), you’ll see conflict markers like this:
+
+<<<<<<< HEAD
+console.log("Welcome to the main branch");
+=======
+console.log("Login feature initialized");
+>>>>>>> feature/login
+You now have to manually resolve the conflict, remove the conflict markers, and keep the correct code.
+
+After resolving:
+
+git add src/App.js src/components/Header.js
+git commit
+This final commit will complete the merge.
+
+Now, while merging is a safe and common way to combine changes, it has a small drawback—it can clutter your commit history.
+

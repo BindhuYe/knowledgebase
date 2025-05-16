@@ -1,0 +1,6 @@
+git cherry-pick <commit-hash>
+This command takes a single commit from another branch and applies it to your current branch, as if you made that change yourself.
+
+It’s super useful when you need a bug fix or feature from another branch but don’t want to pull in everything.
+
+Just be mindful that cherry-picking creates a new commit with the same changes but a different hash, so it’s not identical to the original.

@@ -1,0 +1,16 @@
+git config
+This command lets you set your name and email so Git can tag each of your commits with your identity.
+
+Here’s how to set it up:
+
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+The --global flag means this configuration applies to all your Git projects.
+
+But if you want to set a different name or email just for one project, you can run the same command without the --global flag, inside that project’s folder.
+
+This step might seem small, but it’s actually very important, especially when you’re working in a team.
+
+Git uses this information to track who made what change.
+
+Now let’s say you’re not starting a new project locally. But, joining an existing one hosted on a remote repository, like Github.

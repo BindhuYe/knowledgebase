@@ -1,0 +1,16 @@
+git add
+When you run git add, you’re telling Git to include this in the next snapshot.
+
+Just editing a file isn’t enough. Git doesn’t track your changes automatically.
+
+Until you run git add, those changes are invisible to Git when it comes time to commit.
+
+You can stage a specific file by running git add filename:
+
+git add filename
+Or, if you want to stage everything that’s changed in the current directory, run:
+
+git add .
+git add is like packing your code changes into a box and getting them ready for delivery.
+
+Once your changes are staged, it's time to lock them in with a commit with git commit command.

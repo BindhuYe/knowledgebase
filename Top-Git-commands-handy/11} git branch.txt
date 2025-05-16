@@ -1,0 +1,20 @@
+When you’re working on a new feature or fixing a bug, it’s best to keep that work separate from the main codebase.
+
+That’s where branches come in.
+
+To create a new branch we simply run:
+
+git branch new-feature
+This creates a branch called new-feature , giving you a safe space where you can make changes without affecting the main branch.
+
+Once you're done, you can merge your changes back into the main branch or open a pull request for review.
+
+To see a list of all your local branches, just run:
+
+git branch
+
+The branch you’re currently on will be marked with an asterisk (*).
+
+But if you have multiple branches…How do you switch between them?
+
+That’s where git checkout command comes in.
