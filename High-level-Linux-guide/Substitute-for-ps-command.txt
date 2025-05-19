@@ -1,0 +1,3 @@
+shopt -s extglob
+   cd /proc
+   for pid in `echo +([0-9])`; do echo $pid; cat $pid/cmdline; echo ""; done
