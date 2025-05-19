@@ -135,3 +135,8 @@ Kubernetes cluster
 
 ArgoCD installed and configured
 
+High Level execution looks like the following
+
+![image](https://github.com/user-attachments/assets/46705a4c-af87-44b5-a576-d569c7c2c4d6)
+
+
