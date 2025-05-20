@@ -71,4 +71,5 @@ The pipeline follows these key steps:
 * Ensures consistency and repeatability in deployments.
 
 ---
+![image](https://github.com/user-attachments/assets/345608d2-7558-4547-b7f7-363742c05f37)
 
