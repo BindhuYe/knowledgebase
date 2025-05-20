@@ -55,3 +55,5 @@ The following steps illustrate the CI/CD process:
 This pipeline automates the process from code commit to deployment, ensuring faster and more reliable delivery of applications to production using GitLab and Kubernetes.
 
 --
+
+![image](https://github.com/user-attachments/assets/99cc86d5-3536-4098-887f-e868759c5c9a)
