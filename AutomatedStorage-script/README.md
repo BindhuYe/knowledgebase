@@ -1,0 +1,1 @@
+Automate the storage of Jenkins build logs using a simple script. We’ll read today’s build logs and upload them directly to an S3 bucket with AWS CLI. I’ll also explain why S3 is a cost-effective choice compared to ELK for storing logs
