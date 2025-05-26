@@ -1,7 +1,7 @@
 # kubernetes-vault
 Kubernetes manifests to setup Hashicorp vault server
 
-Full Documentation: https://devopscube.com/vault-in-kubernetes/
+# refer the readme file for steps
 
 #Sample API request to the vault using service account tokens to acquire a token with reading capabilities for path "demo-app"
 
