@@ -1,0 +1,11 @@
+## CPU Utilization Metric
+100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m]) * 100))
+
+## Memory Utlization
+(node_memory_MemFree_bytes / node_memory_MemTotal_bytes) * 100
+
+## Disk Utilization
+100 - ((node_filesystem_avail_bytes{mountpoint="/",fstype!="rootfs"} * 100) / node_filesystem_size_bytes{mountpoint="/",fstype!="rootfs"})
+
+## Network
+rate(node_network_receive_bytes_total{device="eth0"}[1m]) * 8

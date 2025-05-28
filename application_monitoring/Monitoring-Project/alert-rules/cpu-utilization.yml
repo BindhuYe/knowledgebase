@@ -1,0 +1,10 @@
+groups:
+- name: CPUUtilisationHigh
+  rules:
+  - alert: CPUUtilisationHigh
+    expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m]) * 100)) > 0.01
+    for: 1m
+    labels:
+      severity: 'critical'
+    annotations:
+      summary: CPU Utilisation is high
