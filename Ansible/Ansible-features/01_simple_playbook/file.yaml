@@ -1,0 +1,9 @@
+- name: Create files on remote hosts
+  hosts: clients 
+  remote_user: root 
+
+  tasks:
+  - name: creating test file on remote servers 
+    file:
+      path: /home/charan/test1.txt
+      state: touch

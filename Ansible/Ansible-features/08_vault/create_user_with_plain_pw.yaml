@@ -1,0 +1,13 @@
+- name: Create user accounts
+  hosts: clients 
+  remote_user: root
+  vars:
+    secret: Secure*123 
+
+  tasks:
+  - name: create test user on remote hosts
+    user: 
+      name: testuser2
+      password: "{{ secret }}"
+      shell: /bin/bash
+      state: present

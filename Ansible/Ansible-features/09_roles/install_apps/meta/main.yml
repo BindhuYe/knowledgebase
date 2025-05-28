@@ -1,0 +1,6 @@
+galaxy_info:
+  author: charan@nextops.in
+  description: Role to install and configure a LAMP stack or copy files.
+  company: NextOps
+  license: MIT
+  min_ansible_version: 2.9

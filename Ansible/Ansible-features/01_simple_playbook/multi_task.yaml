@@ -1,0 +1,25 @@
+- name: Configure remote hosts
+  hosts: clients 
+  remote_user: root 
+
+  tasks:
+  - name: Running apt-update
+    apt:
+      update-cache: true 
+
+  - name: Installing tree package
+    apt:
+      name: tree
+      state: present
+  
+  - name: creating test file on remote servers 
+    file:
+      path: /home/charan/test1.txt
+      state: touch
+  
+  - name: create test user on remote hosts
+    user: 
+      name: testuser1
+      password: test123
+      shell: /bin/bash
+      state: present

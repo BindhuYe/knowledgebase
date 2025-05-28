@@ -1,0 +1,9 @@
+- name: copy php file
+  copy: 
+      src: files/index.php 
+      dest: /var/www/html/index.php
+      force: yes
+  notify: 
+      - restart apache2 service
+      - restart mysql service
+      

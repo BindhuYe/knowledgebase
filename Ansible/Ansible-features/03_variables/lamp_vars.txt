@@ -1,0 +1,6 @@
+apache_pkg: apache2
+mysql_pkg: mariadb-server
+mysql_service: mariadb
+php_pkgs:
+  - php
+  - php-mysql

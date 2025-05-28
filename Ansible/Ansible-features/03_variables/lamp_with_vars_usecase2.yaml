@@ -1,0 +1,39 @@
+- name: Install LAMP stack
+  hosts: clients
+  remote_user: root
+  vars_files:
+  - lamp_vars.txt
+
+  tasks:
+  - name: Running apt-update
+    apt:
+      name: "{{ apache_pkg }}"
+      state: absent
+  
+  - name: Start apache service
+    service:
+      name: "{{ apache_pkg }}"
+      state: stopped
+      enabled: no
+  
+  - name: Delete default welcome page
+    file:
+      path: "/var/www/html/index.html"
+      state: absent
+  
+  - name: Installing MYSQL community edition
+    apt:
+      name: "{{ mysql_pkg }}"
+      state: absent
+  
+  - name: Start the MySql service
+    service:
+      name: "{{ mysql_service }}"
+      state: stopped
+      enabled: no
+  
+  - name: Install PHP
+    apt: 
+      name: "{{ php_pkgs }}"
+      state: absent
+    

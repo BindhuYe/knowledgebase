@@ -1,0 +1,6 @@
+- name: Exceuting roles
+  hosts: clients
+  remote_user: root 
+
+  roles:
+  - install_apps

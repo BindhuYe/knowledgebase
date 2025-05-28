@@ -1,0 +1,13 @@
+- name: Install tree package
+  hosts: clients 
+  remote_user: root 
+
+  tasks:
+  - name: Running apt-update
+    apt:
+      update-cache: true 
+
+  - name: Installing tree package
+    apt:
+      name: tree
+      state: present

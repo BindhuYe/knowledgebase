@@ -1,0 +1,49 @@
+---
+- name: Run apt-get update
+  apt: 
+      update_cache: yes
+      
+- name: installing apache
+  apt: 
+      name: apache2
+      state: latest
+  
+- name: enable apache service
+  service:
+      name: apache2
+      enabled: yes
+      state: started
+  
+- name: delete default welcome page
+  file:
+      path: /var/www/html/index.html
+      state: absent
+  notify: 
+      - restart apache2 service 
+
+- name: install mysql db community edition
+  apt:
+      name: mariadb-server
+      state: latest
+  notify:
+      restart mysql service
+
+- name: enable mysql service
+  service:
+      name: mariadb
+      enabled: yes
+      state: started
+  
+- name: install php
+  apt:
+      name: 
+      - php
+      - php-mysql
+      state: latest
+
+- name: configure_apache
+  template: 
+    src: templates/apache.conf.j2
+    dest: /etc/apache2/sites-available/000.default.conf
+  notify:
+    restart apache2 service
