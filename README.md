@@ -2,7 +2,10 @@ This space contains some example frameworks, use cases, advancements and other u
 
 Here are is the Repositories information
 
-For testing concepts - https://github.com/BindhuYe/Testing
-For AD and infrastructure concepts - https://github.com/BindhuYe/infrastructure
-For technology Performance comparisons - https://github.com/BindhuYe/performance
-For security concepts - https://github.com/BindhuYe/security 
+- For testing concepts - https://github.com/BindhuYe/Testing
+
+- For Active Directory, VMware and infrastructure concepts - https://github.com/BindhuYe/infrastructure
+
+- For technology Performance comparisons - https://github.com/BindhuYe/performance
+
+- For security concepts - https://github.com/BindhuYe/security 
