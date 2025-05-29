@@ -1,0 +1,1 @@
+Node.js application is for use in demonstrating scenarios for Azure Container Registry Tasks

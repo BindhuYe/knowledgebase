@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pandacloud-app
+  labels:
+    app: pandacloud-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pandacloud-app
+  template:
+    metadata:
+      labels:
+        app: pandacloud-app
+    spec:
+      containers:
+      - name: pandacloud-container
+        image: 241533146625.dkr.ecr.us-east-1.amazonaws.com/amazon-prime:latest
+        ports:
+        - containerPort: 3000
+...
