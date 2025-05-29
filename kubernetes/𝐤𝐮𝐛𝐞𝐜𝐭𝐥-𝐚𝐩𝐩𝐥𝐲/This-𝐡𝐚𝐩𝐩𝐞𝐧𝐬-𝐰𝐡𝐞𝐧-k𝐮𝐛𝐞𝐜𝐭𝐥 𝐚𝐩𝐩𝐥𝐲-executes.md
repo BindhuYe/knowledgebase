@@ -13,3 +13,5 @@ Here’s what really happens when you 𝐚𝐩𝐩𝐥𝐲 that 𝐦𝐚𝐧𝐢
 6️⃣ Meanwhile, 𝐜𝐨𝐧𝐭𝐫𝐨𝐥𝐥𝐞𝐫𝐬 like the ReplicaSet controller or Deployment controller ensure your declared state is always met.
 
 7️⃣ Liveness/readiness probes, service endpoints, DNS, networking, CNI plugins, all kick into gear to wire up your pod properly in the cluster.
+
+![image](https://github.com/user-attachments/assets/aa1a27c9-3f0f-45ec-a985-667e23149ff2)
