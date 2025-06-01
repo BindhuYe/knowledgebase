@@ -1,0 +1,27 @@
+services:
+  todo-app:
+    build:
+      context: ./app
+    environment:
+      NODE_ENV: prod
+    ports:
+      - 3000:3000
+    links:
+      - todo-database 
+
+  todo-database:
+    image: mongo:6
+    ports:
+      - 27017:27017
+    volumes:
+      - database:/data/db
+
+volumes: 
+  database:
+
+#docker pull mongo:6
+#docker volume create database 
+#docker run -dit --name todo-database -p 27017:27017 -v database:/data/db mongo:6
+
+#docker build -t todo-app .
+#docker run -dit --name todo-app -p 3000:3000 todo-app

@@ -1,0 +1,15 @@
+#multi staged build
+# stage1: build the application (upto compilation)
+FROM maven:3.8.4-openjdk-11 AS builder
+WORKDIR /app
+COPY pom.xml . 
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn package
+
+# stage2: create light weight image
+FROM openjdk:11-jre-slim 
+WORKDIR /app 
+COPY --from=builder /app/target/bmi-1.0.jar .
+EXPOSE 8000
+CMD ["java", "-jar", "target/bmi-1.0.jar"]
