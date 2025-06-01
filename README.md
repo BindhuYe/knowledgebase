@@ -1,6 +1,6 @@
 This space contains some example frameworks, use cases, advancements and other useful stuff related to cloud, DevOps, Site Reliability, Performance, Networking and Infrastructure concepts but not strictly limited. 
 
-Here are is the Repositories information
+Here is the other Repositories information
 
 - For testing concepts - https://github.com/BindhuYe/Testing
 
