@@ -1,4 +1,4 @@
-## Reference : Google Sre Monitoring (Documentation for guidelines)
+## Reference : Google SRE Monitoring (Documentation for guidelines)
 ## There are two types of Monitoring
 
 - Black Box Monitoring
