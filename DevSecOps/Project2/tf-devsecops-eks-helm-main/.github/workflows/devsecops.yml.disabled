@@ -1,0 +1,134 @@
+name: Secure ECR-EKS-Helm Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run SonarQube Scan
+      uses: SonarSource/sonarqube-scan-action@v5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=fekri600_devsecops2
+          -Dsonar.organization=fekri600
+          -Dsonar.sources=.
+          -Dsonar.host.url=https://sonarcloud.io
+
+    - name: SonarCloud Quality Gate Check
+      uses: SonarSource/sonarqube-quality-gate-action@master
+      timeout-minutes: 5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Build Docker image
+      run: docker build -t devsecops:latest .
+
+    - name: Scan Docker image with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'devsecops'
+        format: 'table'
+        exit-code: '1'
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH'
+
+    - name: Configure AWS credentials via OIDC
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        aws-region: us-east-1
+
+    - name: Log in to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: Tag and push Docker image to ECR
+      env:
+        ECR_REPO_URL: ${{ secrets.ECR_REPO_URL }}
+        
+      run: |
+        IMAGE_TAG=${{ github.sha }}
+        docker tag devsecops:latest $ECR_REPO_URL:$IMAGE_TAG
+        docker push $ECR_REPO_URL:$IMAGE_TAG
+
+  deploy-terraform:
+    name: Deploy Helm via Terraform
+    needs: build-and-scan
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app_deploy
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials via OIDC
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        aws-region: us-east-1
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.11.4
+
+    - name: Configure kubeconfig for EKS
+      run: |
+        aws eks update-kubeconfig \
+          --region us-east-1 \
+          --name ${{ secrets.EKS_CLUSTER }}
+    
+        # (after Terraform Init and kubeconfig)
+
+    - name: Helm cleanup (remove failed release if present)
+      run: |
+        helm uninstall devsecops-app --namespace default || true
+
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Plan with image tag
+      run: |
+        terraform plan \
+          -var="image_tag=${{ github.sha }}" \
+          -var="ecr_repo_url=${{ secrets.ECR_REPO_URL }}" \
+          -var="cluster_name=${{ secrets.EKS_CLUSTER }}" \
+          -var="cluster_ca_certificate_data=${{ secrets.EKS_CLUSTER_CA }}" \
+          -var="cluster_endpoint=${{ secrets.EKS_CLUSTER_ENDPOINT }}"
+    
+  
+
+    - name: Terraform Apply with image tag
+      run: |
+        terraform apply -auto-approve \
+          -var="image_tag=${{ github.sha }}" \
+          -var="ecr_repo_url=${{ secrets.ECR_REPO_URL }}" \
+          -var="cluster_name=${{ secrets.EKS_CLUSTER }}" \
+          -var="cluster_ca_certificate_data=${{ secrets.EKS_CLUSTER_CA }}" \
+          -var="cluster_endpoint=${{ secrets.EKS_CLUSTER_ENDPOINT }}"
+    
+
+          
